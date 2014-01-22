@@ -1,0 +1,43 @@
+
+Implementar um FTP simplificado seguindo o seguinte protocolo usando cabo par trançado crossover e RawSocket.
+Usar:
+	Controle de fluxo -> para-e-espera
+	Detecção de erros - CRC de 8bit
+	Timeout (obrigatoriamente)
+	Todas as mensagens devem ter o seguinte formato:
+		[ marca	| tamanho | sequencia | tipo | DADOS		| CRC ]
+		   6bit	   4bit       2bit	4bit	16bytes		  8bit
+
+Entrega: 30/11
+
+Implementar:
+		ls, cd (local e remoto)
+		pet, get  (envia e puxa arquivos de texto e binários)
+
+
+Tipo	|    Descrição	|
+-------------------------
+0	|	cd	|
+1	|	ACK	|
+2	|	NACK	|
+3	|	ls	|
+4	|	print	|
+5	|	put	|
+6	|		|
+7	|		|
+8	|		|
+9	|		|
+A	|	atrib	|
+B	|		|
+C	|		|
+D	|	dados	|
+E	|	erro	|
+F	|	fim	|
+
+
+
+Erro	|    Descrição	|
+-------------------------
+0	|	nenhum	|
+1	|	permiss	|
+2	|	espaço	|
